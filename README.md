@@ -1,4 +1,4 @@
-![AI_image](AI_image.jpg)
+![Future-Developments-AI](Future-Developments-AI.jpg)
 # prompt:  
 jobs = response.json()  # Parse the response into JSON format   
 # jobs['jobs']  
