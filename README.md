@@ -1,4 +1,4 @@
-![AI_image](AI_image.jpeg)
+![AI_image](AI_image.jpg)
 # prompt:  jobs = response.json()  # Parse the response into JSON format
 #     jobs['jobs']   flattened the nested Json and convert it to a dataframe
 
