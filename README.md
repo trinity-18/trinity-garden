@@ -1,9 +1,16 @@
 ![AI_image](AI_image.jpg)
-# prompt:  jobs = response.json()  # Parse the response into JSON format
-#     jobs['jobs']   flattened the nested Json and convert it to a dataframe
+# prompt:  
+jobs = response.json()  # Parse the response into JSON format   
+# jobs['jobs']  
+flattened the nested Json and convert it to a dataframe
 
+<!-- python code block -->
+```python
 import requests
 import pandas as pd
+```
+
+
 # 
 # 
 
@@ -12,10 +19,16 @@ url = "https://job-search-api1.p.rapidapi.com/v1/job-description-search"
 querystring = {"q": "Cybersecurity", "page": "1", "country": "us"}
 
 # API headers with RapidAPI key
+<!-- python code block -->
+```python
 headers = {
     "x-rapidapi-key": "e7990abd13msh2b5551af1a09605p17bc84jsna5266fb436ab",
     "x-rapidapi-host": "job-search-api1.p.rapidapi.com"
 }
+
+```
+
+
 
 # Sending the request to the API
 response = requests.get(url, headers=headers, params=querystring)
@@ -69,7 +82,12 @@ You can install them using pip:
 
 bash
 Copy code
+<!-- python code block -->
+```python
 pip install requests pandas
+```
+
+
 
 
 
