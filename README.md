@@ -91,8 +91,22 @@ pip install requests pandas
 
 
 
-How the Script Works
-API Call: The script sends a GET request to the job search API using the requests library. It includes the required API key in the headers and passes search parameters (for "Cybersecurity" jobs in the U.S.). Each job listing contains the full job description in plain text and HTML, the job title, publication time, company name, source and application URL. The salary range is provided when it's available. The salary type has 5 possible values: "yearly", "monthly", "weekly", "daily" and "hourly". With this code it only returns 10 listings for cybersecurity.
+# How the Script Works
+API Call: The script sends a GET request to the job search API using the requests library. It includes the required API key in the headers and passes search parameters (for "Cybersecurity" jobs in the U.S.). 
+Each job listing contains the full job description in:
+    plain text and HTML
+    the job title
+    publication time
+    company name 
+    source  
+    application URL.
+The salary range is provided when it's available. The salary type has 5 possible values: 
+    "yearly"
+    "monthly"
+    "weekly"
+    "daily"  
+    "hourly". 
+With this code it only returns 10 listings for cybersecurity.
 
 
 Parse Response: The response, which comes in JSON format, is parsed. The relevant job data is located under the jobs key in the JSON structure.
@@ -103,23 +117,28 @@ DataFrame Creation: The flattened data is then converted into a pandas DataFrame
 
 CSV Export: Finally, the DataFrame is saved as a CSV file (cybersecurity_jobs.csv) for further use.
 
-How to Use
+# How to Use
 API Key: Replace the placeholder value of "x-rapidapi-key" with your actual RapidAPI key.
 
 python
 Copy code
+<!-- python code block -->
+```python
 headers = {
     "x-rapidapi-key": "YOUR_RAPIDAPI_KEY_HERE",
     "x-rapidapi-host": "job-search-api1.p.rapidapi.com"
 }
-Running the Script: Run the script in a Python environment.
+```
+
+Running the Script: 
+Run the script in a Python environment.
 
 bash
 Copy code
 python job_scraper.py
 Output: The script will output a CSV file named cybersecurity_jobs.csv containing the job listings.
 
-Parameters
+# Parameters
 You can modify the job search parameters in the querystring to suit your needs:
 
 q: Change the keyword from "Cybersecurity" to any other field of interest (e.g., "Data Science").
@@ -132,5 +151,8 @@ Error Handling
 If the API call fails (status code other than 200), the script will print an error message and exit.
 python
 Copy code
+<!-- python code block -->
+```python
 if response.status_code != 200:
     print(f"Failed to fetch data. Status code: {response.status_code}")
+```
