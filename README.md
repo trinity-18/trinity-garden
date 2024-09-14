@@ -74,18 +74,21 @@ pip install requests pandas
 
 # How the Script Works
 API Call: The script sends a GET request to the job search API using the requests library. It includes the required API key in the headers and passes search parameters (for "Cybersecurity" jobs in the U.S.). 
+
 Each job listing contains the full job description in:
+    
     Plain text and HTML
     The job title
     Publication time
-    Company name 
-    Source  
+    Company name
+    Source
     Application URL.
 The salary range is provided when it's available. The salary type has 5 possible values: 
+   
     "yearly"
     "monthly"
     "weekly"
-    "daily"  
+    "daily" 
     "hourly". 
 With this code it only returns 10 listings for cybersecurity.
 
@@ -118,9 +121,11 @@ Output: The script will output a CSV file named cybersecurity_jobs.csv containin
 # Parameters
 You can modify the job search parameters in the querystring to suit your needs:
 
-Change the keyword from "Cybersecurity" to any other field of interest (e.g., "Data Science").
-Page: Adjust the page number for pagination.
-Pountry: Specify the country (default is the U.S.).
+Change the keyword from "Cybersecurity" to any other field of interest (e.g., "Data Science")
+
+Page: Adjust the page number for pagination
+
+Pountry: Specify the country (default is the U.S.)
 
 python
 Copy code
