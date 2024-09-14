@@ -72,32 +72,26 @@ pip install requests pandas
 
 
 
-
-
 # How the Script Works
 API Call: The script sends a GET request to the job search API using the requests library. It includes the required API key in the headers and passes search parameters (for "Cybersecurity" jobs in the U.S.). 
 Each job listing contains the full job description in:
-        plain text and HTML
-        the job title
-        publication time
-        company name 
-        source  
-        application URL.
+    Plain text and HTML
+    The job title
+    Publication time
+    Company name 
+    Source  
+    Application URL.
 The salary range is provided when it's available. The salary type has 5 possible values: 
-        "yearly"
-        "monthly"
-        "weekly"
-        "daily"  
-        "hourly". 
+    "yearly"
+    "monthly"
+    "weekly"
+    "daily"  
+    "hourly". 
 With this code it only returns 10 listings for cybersecurity.
 
-
 Parse Response: The response, which comes in JSON format, is parsed. The relevant job data is located under the jobs key in the JSON structure.
-
 Flatten Nested JSON: Many of the job details come in nested structures. The script flattens these nested dictionaries, transforming them into a single-layer dictionary where each nested field is concatenated with its parent key.
-
 DataFrame Creation: The flattened data is then converted into a pandas DataFrame for easy manipulation and export.
-
 CSV Export: Finally, the DataFrame is saved as a CSV file (cybersecurity_jobs.csv) for further use.
 
 # How to Use
@@ -113,7 +107,7 @@ headers = {
 }
 ```
 
-Running the Script: 
+# Running the Script: 
 Run the script in a Python environment.
 
 bash
@@ -124,9 +118,9 @@ Output: The script will output a CSV file named cybersecurity_jobs.csv containin
 # Parameters
 You can modify the job search parameters in the querystring to suit your needs:
 
-    Change the keyword from "Cybersecurity" to any other field of interest (e.g., "Data Science").
-    Page: Adjust the page number for pagination.
-    Pountry: Specify the country (default is the U.S.).
+Change the keyword from "Cybersecurity" to any other field of interest (e.g., "Data Science").
+Page: Adjust the page number for pagination.
+Pountry: Specify the country (default is the U.S.).
 
 python
 Copy code
