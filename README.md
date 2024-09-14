@@ -1,35 +1,22 @@
 ![Future-Developments-AI](Future-Developments-AI.jpg)
 # prompt:  
-jobs = response.json()  # Parse the response into JSON format   
-# jobs['jobs']  
+jobs = response.json()  # Parse the response into JSON format jobs['jobs']  
 flattened the nested Json and convert it to a dataframe
 
 <!-- python code block -->
 ```python
 import requests
 import pandas as pd
-```
-
-
-# 
-# 
 
 # API endpoint and query
 url = "https://job-search-api1.p.rapidapi.com/v1/job-description-search"
 querystring = {"q": "Cybersecurity", "page": "1", "country": "us"}
 
 # API headers with RapidAPI key
-<!-- python code block -->
-```python
 headers = {
     "x-rapidapi-key": "e7990abd13msh2b5551af1a09605p17bc84jsna5266fb436ab",
     "x-rapidapi-host": "job-search-api1.p.rapidapi.com"
 }
-
-```
-
-
-
 # Sending the request to the API
 response = requests.get(url, headers=headers, params=querystring)
 
@@ -58,22 +45,18 @@ if response.status_code == 200:
     print("Job data saved to 'cybersecurity_jobs.csv'")
 else:
     print(f"Failed to fetch data. Status code: {response.status_code}")
-
-
-
-
-
+```
 
 This project is a Python script that fetches job listings related to "Cybersecurity" from a job search API and saves the data in a CSV file. It utilizes the requests library to interact with the API and pandas to handle data processing.
 
-Features
+# Features
 Queries a job search API for cybersecurity-related jobs in the United States.
 Parses and flattens nested JSON data into a more accessible format.
 Saves the parsed job data to a CSV file for further analysis or use.
 
 
 
-Prerequisites
+# Prerequisites
 Before running this script, make sure the following Python libraries are installed:
 
 requests
@@ -94,18 +77,18 @@ pip install requests pandas
 # How the Script Works
 API Call: The script sends a GET request to the job search API using the requests library. It includes the required API key in the headers and passes search parameters (for "Cybersecurity" jobs in the U.S.). 
 Each job listing contains the full job description in:
-    plain text and HTML
-    the job title
-    publication time
-    company name 
-    source  
-    application URL.
+        plain text and HTML
+        the job title
+        publication time
+        company name 
+        source  
+        application URL.
 The salary range is provided when it's available. The salary type has 5 possible values: 
-    "yearly"
-    "monthly"
-    "weekly"
-    "daily"  
-    "hourly". 
+        "yearly"
+        "monthly"
+        "weekly"
+        "daily"  
+        "hourly". 
 With this code it only returns 10 listings for cybersecurity.
 
 
@@ -141,13 +124,18 @@ Output: The script will output a CSV file named cybersecurity_jobs.csv containin
 # Parameters
 You can modify the job search parameters in the querystring to suit your needs:
 
-q: Change the keyword from "Cybersecurity" to any other field of interest (e.g., "Data Science").
-page: Adjust the page number for pagination. 
-country: Specify the country (default is the U.S.).
+    Change the keyword from "Cybersecurity" to any other field of interest (e.g., "Data Science").
+    Page: Adjust the page number for pagination.
+    Pountry: Specify the country (default is the U.S.).
+
 python
 Copy code
+<!-- python code block -->
+```python
 querystring = {"q": "Cybersecurity", "page": "1", "country": "us"}
-Error Handling
+```
+
+# Error Handling
 If the API call fails (status code other than 200), the script will print an error message and exit.
 python
 Copy code
