@@ -14,7 +14,7 @@ querystring = {"q": "Cybersecurity", "page": "1", "country": "us"}
 
 # API headers with RapidAPI key
 headers = {
-    "x-rapidapi-key": "e7990abd13msh2b5551af1a09605p17bc84jsna5266fb436ab",
+    "x-rapidapi-key": "API-KEY",
     "x-rapidapi-host": "job-search-api1.p.rapidapi.com"
 }
 # Sending the request to the API
