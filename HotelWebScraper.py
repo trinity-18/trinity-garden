@@ -1,10 +1,3 @@
-# prompt: generate a code that uses this snippet to scrape the web for cybersecurity job
-# import requests
-# url = "https://active-jobs-db.p.rapidapi.com/active-ats"
-# querystring = {"title":"entrylevelCybersecurity ","location":"\"United States\"","offset":"100","description":"text"}
-# headers = {
-# 	"x-rapidapi-key": "e7990abd13msh2b5551af1a09605p17bc84jsna5266fb436ab",
-# 	"x-rapidapi-host": "active-jobs-db.p.rapidapi.com"
 
 import requests
 import json
@@ -13,7 +6,7 @@ import csv
 url = "https://active-jobs-db.p.rapidapi.com/active-ats"
 querystring = {"title": "entrylevelCybersecurity", "location": "\"United States\"", "offset": "100", "description": "html"}
 headers = {
-    "x-rapidapi-key": "e7990abd13msh2b5551af1a09605p17bc84jsna5266fb436ab",
+    "x-rapidapi-key": "YOUR_API-KEY",
     "x-rapidapi-host": "active-jobs-db.p.rapidapi.com"
 }
 
