@@ -1,4 +1,3 @@
-![Future-Developments-AI](Future-Developments-AI.jpg)
  Job Data Downloader
 
 # Description:
